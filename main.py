@@ -1,4 +1,15 @@
 encrypted_message = ""
+def loop():
+  x = True
+  while x:
+    answer = input("Would you like to decrypt, encrypt, or exit??")
+    if answer == "encrypt":
+      encrypt1()
+    elif answer == "decrypt":
+      decrypt()
+    elif answer == "exit":
+      x = False
+
 decrypted_message = ""
 def encrypt1():
   e = int(input("What is the value of e?"))
@@ -25,14 +36,7 @@ def decrypt():
       denumerize = chr(decrypt)
       decrypted_message += denumerize
   print (decrypted_message)
-decrypt()
 
-def encrypter():
-  message = input("What is the message you would like to encrypt?")
-  for x in message:
-      numerize = ord(x)
-      encrypt = pow(numerize, e, n)
-      denumerize = chr(encrypt)
-      encrypted_message += denumerize
-encrypt1()
+loop()
+
   
